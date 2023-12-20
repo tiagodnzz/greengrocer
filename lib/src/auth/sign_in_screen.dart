@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/auth/components/custom_text_field.dart';
 import 'package:greengrocer/src/auth/sign_up_screen.dart';
+import 'package:greengrocer/src/base/base_screen.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -9,7 +10,6 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -24,10 +24,8 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-              
                     //Nome do App
-                    Text.rich(
-                      TextSpan(
+                    Text.rich(TextSpan(
                         style: const TextStyle(
                           fontSize: 40,
                         ),
@@ -36,18 +34,14 @@ class SignInScreen extends StatelessWidget {
                               text: 'Green',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold
-                              )
-                          ),
+                                  fontWeight: FontWeight.bold)),
                           TextSpan(
                               text: 'grocer',
                               style: TextStyle(
                                 color: CustomColors.customContrastColor,
                               )),
-                        ]
-                      )
-                    ),
-              
+                        ])),
+
                     //Categorias
                     SizedBox(
                       height: 30,
@@ -56,29 +50,30 @@ class SignInScreen extends StatelessWidget {
                           fontSize: 25,
                         ),
                         child: AnimatedTextKit(
-                          pause: Duration.zero,
-                          repeatForever: true,
-                          animatedTexts: [
-                            FadeAnimatedText('Frutas'),
-                            FadeAnimatedText('Verduras'),
-                            FadeAnimatedText('Legumes'),
-                            FadeAnimatedText('Carnes'),
-                            FadeAnimatedText('Cereais'),
-                            FadeAnimatedText('Laticinios'),
-                          ]
-                        ),
+                            pause: Duration.zero,
+                            repeatForever: true,
+                            animatedTexts: [
+                              FadeAnimatedText('Frutas'),
+                              FadeAnimatedText('Verduras'),
+                              FadeAnimatedText('Legumes'),
+                              FadeAnimatedText('Carnes'),
+                              FadeAnimatedText('Cereais'),
+                              FadeAnimatedText('Laticinios'),
+                            ]),
                       ),
                     )
                   ],
                 ),
               ),
-              
+
               //Form
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
                 decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(45))),
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(45))),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -87,14 +82,14 @@ class SignInScreen extends StatelessWidget {
                       icon: Icons.email,
                       label: 'Email',
                     ),
-              
+
                     // Senha
                     const CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',
                       isSecret: true,
                     ),
-              
+
                     //Entrar
                     SizedBox(
                       height: 50,
@@ -102,24 +97,30 @@ class SignInScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (c) {
+                              return const BaseScreen();
+                            }));
+                          },
                           child: const Text(
                             'Entrar',
                             style: TextStyle(fontSize: 18),
                           )),
                     ),
-              
+
                     //Esqueceu a senha
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
                           onPressed: () {},
-                          child:  Text(
+                          child: Text(
                             'Esqueceu a senha?',
-                            style: TextStyle(color: CustomColors.customContrastColor),
+                            style: TextStyle(
+                                color: CustomColors.customContrastColor),
                           )),
                     ),
-              
+
                     //Divisor
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
@@ -144,7 +145,7 @@ class SignInScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-              
+
                     //Cadastrar
                     SizedBox(
                       height: 50,
@@ -155,9 +156,8 @@ class SignInScreen extends StatelessWidget {
                               side: const BorderSide(
                                   width: 1.5, color: Colors.green)),
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (c) => SignUpScreen())
-                            );
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (c) => SignUpScreen()));
                           },
                           child: const Text(
                             'Criar conta',
