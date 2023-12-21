@@ -1,5 +1,7 @@
 import 'package:greengrocer/src/models/item_model.dart';
 
+// Model Produtos
+
 ItemModel apple = ItemModel(
   imgUrl: 'assets/fruits/apple.png',
   itemName: 'Maçã',
@@ -54,6 +56,8 @@ ItemModel papaya = ItemModel(
       'O melhor mamão da região e que conta com o melhor preço de qualquer quitanda. Este item conta com vitaminas essenciais para o fortalecimento corporal, resultando em uma vida saudável.',
 );
 
+// Mocks
+
 // Lista de produtos
 List<ItemModel> items = [
   apple,
@@ -63,3 +67,13 @@ List<ItemModel> items = [
   mango,
   papaya,
 ];
+
+//Filtros
+  List<String> categories = [
+    'Tudo',
+    'Frutas',
+    'Grãos',
+    'Verduras',
+    'Temperos',
+    'Cereais'
+  ];
