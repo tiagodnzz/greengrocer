@@ -1,3 +1,4 @@
+import 'package:greengrocer/src/models/cart_item_model.dart';
 import 'package:greengrocer/src/models/item_model.dart';
 
 // Model Produtos
@@ -69,11 +70,27 @@ List<ItemModel> items = [
 ];
 
 //Filtros
-  List<String> categories = [
-    'Tudo',
-    'Frutas',
-    'Grãos',
-    'Verduras',
-    'Temperos',
-    'Cereais'
-  ];
+List<String> categories = [
+  'Tudo',
+  'Frutas',
+  'Grãos',
+  'Verduras',
+  'Temperos',
+  'Cereais'
+];
+
+//Lista Carrinho
+List<CartItemModel> cartItems = [
+  CartItemModel(
+    item: apple,
+    quantity: 2,
+  ),
+  CartItemModel(
+    item: mango,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: guava,
+    quantity: 3,
+  ),
+];
